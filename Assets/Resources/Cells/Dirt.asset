@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dirt
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 7482667652216324306, guid: 1beff4e0f43d5478cb27d2c15c458e72, type: 3}
-  m_Color: {r: 0.1981132, g: 0.13672465, b: 0.08503916, a: 1}
+  m_Color: {r: 0.38679248, g: 0.32701454, b: 0.2025187, a: 1}
   m_Transform:
     e00: 1
     e01: 0

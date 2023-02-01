@@ -44,9 +44,6 @@ public class TileCollision : MonoBehaviour {
             });
         });
 
-        Debug.Log("Log");
-        positions.ForEach((position) => Debug.Log(position));
-
         positions.ForEach((position) => tilemap.SetTile(position, null));
     }
 
