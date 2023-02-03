@@ -18,10 +18,8 @@ public class Doritos : Creature {
     }
 
     protected override void Move() {
-        rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW, 0));
-        if (rb.velocity.x < 0.02f) {
-            rb.AddForce(new Vector2(0, 20f));
-        }
+        Walk();
+        StuckSaver();
     }
 
     protected override void MeleeAttack() {
@@ -29,6 +27,14 @@ public class Doritos : Creature {
     }
 
     protected override void RangeAttack() {
+
+    }
+
+    private void Walk() {
+        rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW, 0));
+    }
+
+    private void Climb() {
 
     }
 }

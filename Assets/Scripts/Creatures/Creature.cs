@@ -15,6 +15,12 @@ public abstract class Creature : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    protected void StuckSaver() {
+        if (rb.velocity.x < CreatureConstants.STUCK_VELOCITY_THRESHOLD) {
+            rb.AddForce(new Vector2(0, CreatureConstants.STUCK_JUMP));
+        }
+    }
+
     protected void SearchTarget() {
 
     }
