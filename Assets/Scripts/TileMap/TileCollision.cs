@@ -1,20 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq; // needed for cloning the list with .ToList()
 using UnityEngine;
 using UnityEngine.Tilemaps; // needed for Tilemap
 
 public class TileCollision : MonoBehaviour {
-    Tilemap tilemap;
-    GridLayout gridLayout;
+    public Tilemap tilemap;
+    public GridLayout gridLayout;
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        //EraseOnCollision(collision);
+    void Start() {
+        tilemap = GetComponent<Tilemap>();
+        gridLayout = GetComponentInParent<GridLayout>();
     }
 
-    private void OnCollisionStay2D(Collision2D collision) {
-        //EraseOnCollision(collision);
-    }
+    //private void OnCollisionEnter2D(Collision2D collision) {
+    //    EraseOnCollision(collision);
+    //}
+
+    //private void OnCollisionStay2D(Collision2D collision) {
+    //    EraseOnCollision(collision);
+    //}
 
     private void EraseOnCollision(Collision2D collision) {
         List<ContactPoint2D> contacts = new List<ContactPoint2D>();

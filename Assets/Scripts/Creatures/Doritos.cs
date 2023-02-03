@@ -19,6 +19,7 @@ public class Doritos : Creature {
 
     protected override void Move() {
         Walk();
+        //Climb();
         StuckSaver();
     }
 
@@ -35,6 +36,6 @@ public class Doritos : Creature {
     }
 
     private void Climb() {
-
+        rb.AddForce(new Vector2(0, CreatureConstants.VELOCITY_LOW * 3));
     }
 }
