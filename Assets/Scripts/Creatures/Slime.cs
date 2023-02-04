@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doritos : Creature {
+public class Slime : Creature
+{
     public float health = CreatureConstants.HEALTH_LOW;
     public float mass = CreatureConstants.MASS_LOW;
     public float velocity = CreatureConstants.VELOCITY_LOW;
@@ -32,7 +33,7 @@ public class Doritos : Creature {
     }
 
     private void Walk() {
-        rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW, 0));
+        rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW * (isAlly ? 1 : -1), 0));
     }
 
     private void Climb() {
