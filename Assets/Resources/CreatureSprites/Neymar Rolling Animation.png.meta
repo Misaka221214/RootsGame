@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b7e40820999b040889781e0e61cbe11c
+guid: f4a4252a204214f42a4798bd42b0ad07
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46392229de6d34d6f8ec364e40dbb0d7
-      internalID: 429679270
+      spriteID: 5d27bde7c8d7c4a709c74665932c3ec9
+      internalID: 491776172
       vertices: []
       indices: 
       edges: []
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 025c48a8343d14ebbaa6df0f4f3bbb29
-      internalID: 1620686408
+      spriteID: ca99c75f3ab9c42dfb49d10579e510a3
+      internalID: -1883917269
       vertices: []
       indices: 
       edges: []
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b1bbef9cc4ba481980bd0a770757ad8
-      internalID: 72815895
+      spriteID: d61a5dfd7beee4672a24ed5e8686b972
+      internalID: -1787725220
       vertices: []
       indices: 
       edges: []
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ed8dcb80916f4d57bf176554634ebd3
-      internalID: -430592014
+      spriteID: 8e5fe9d24018447b89563244e600394f
+      internalID: 865174426
       vertices: []
       indices: 
       edges: []
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 383a2d327ae04468f8da63600b78f8e1
-      internalID: 146583027
+      spriteID: 540a2cbcaadb643cba5f8b9c9499296b
+      internalID: -2068000771
       vertices: []
       indices: 
       edges: []
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05cb0b0eb1f4746319894b342b5c1025
-      internalID: 1307892916
+      spriteID: 26667b52c4a754db5a0a968802be90c9
+      internalID: 554013311
       vertices: []
       indices: 
       edges: []
@@ -245,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af2e1ec175f204d5bbb469723d9623ea
-      internalID: -722725631
+      spriteID: 8037e86263dac4b3da846f9ef59e9704
+      internalID: 688701872
       vertices: []
       indices: 
       edges: []
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a7ce442d330b48aa9cf676de6b545fc
-      internalID: -363452826
+      spriteID: 7dcf7ff228124478ea9da7aac9725d8d
+      internalID: -1241048413
       vertices: []
       indices: 
       edges: []
@@ -287,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e78dff06975f843578601b48834a642a
-      internalID: -1070456388
+      spriteID: 8f44c8ea4ac034ab98389a7051e5d81e
+      internalID: -1917676972
       vertices: []
       indices: 
       edges: []
@@ -304,15 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Neymar Rolling Animation_8: -1070456388
-      Neymar Rolling Animation_1: 1620686408
-      Neymar Rolling Animation_2: 72815895
-      Neymar Rolling Animation_7: -363452826
-      Neymar Rolling Animation_0: 429679270
-      Neymar Rolling Animation_5: 1307892916
-      Neymar Rolling Animation_3: -430592014
-      Neymar Rolling Animation_6: -722725631
-      Neymar Rolling Animation_4: 146583027
+      Neymar Rolling Animation_8: -1917676972
+      Neymar Rolling Animation_1: -1883917269
+      Neymar Rolling Animation_2: -1787725220
+      Neymar Rolling Animation_7: -1241048413
+      Neymar Rolling Animation_0: 491776172
+      Neymar Rolling Animation_5: 554013311
+      Neymar Rolling Animation_3: 865174426
+      Neymar Rolling Animation_6: 688701872
+      Neymar Rolling Animation_4: -2068000771
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
