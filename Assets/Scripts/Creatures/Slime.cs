@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slime : Creature
-{
-    public float health = CreatureConstants.HEALTH_LOW;
+public class Slime : Creature {
+    public float health = CreatureConstants.HEALTH_HIGH;
     public float mass = CreatureConstants.MASS_LOW;
     public float velocity = CreatureConstants.VELOCITY_LOW;
     public int ammo = CreatureConstants.AMMO_LOW;
+
+    public void Awake() {
+        creatureType = CreatureType.SLIME;
+    }
 
     public void FixedUpdate() {
         Act();
@@ -30,6 +33,14 @@ public class Slime : Creature
 
     protected override void RangeAttack() {
 
+    }
+
+    public override void TakeDamage(int damage) {
+        health -= damage;
+
+        if (health <= 0f) {
+            Die();
+        }
     }
 
     private void Walk() {
