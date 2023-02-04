@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoritosChip : MonoBehaviour {
-    public float deleteTime = 10f;
+    private float deleteTime = 3f;
 
     void FixedUpdate() {
         deleteTime -= Time.deltaTime;
