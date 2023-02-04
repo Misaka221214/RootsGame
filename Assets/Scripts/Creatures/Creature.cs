@@ -9,10 +9,12 @@ public abstract class Creature : MonoBehaviour {
     public CreatureType creatureType;
 
     private float stuckSaverDeltaTimer = CreatureConstants.STUCK_COOLDOWN;
+    protected float wanderingDirectionDeltaTimer = CreatureConstants.WANDERING_COOLDOWN;
+
+    protected readonly List<int> direction = new() { -1, 1 };
 
     protected abstract void Act();
     protected abstract void Move();
-    protected abstract void MeleeAttack();
     protected abstract void RangeAttack();
     public abstract void TakeDamage(int damage);
 
@@ -23,7 +25,7 @@ public abstract class Creature : MonoBehaviour {
     }
 
     protected void StuckSaver() {
-        stuckSaverDeltaTimer--;
+        stuckSaverDeltaTimer -= Time.deltaTime;
         if (stuckSaverDeltaTimer < 0f && Mathf.Abs(rb.velocity.x) < CreatureConstants.STUCK_VELOCITY_THRESHOLD) {
             stuckSaverDeltaTimer = CreatureConstants.STUCK_COOLDOWN;
             rb.AddForce(new Vector2(0, CreatureConstants.STUCK_JUMP * 5));
@@ -40,7 +42,15 @@ public abstract class Creature : MonoBehaviour {
         }
     }
 
-    protected void SearchTarget() {
-
+    public Vector2 GetTargetDirection() {
+        if (target == null) {
+            if (wanderingDirectionDeltaTimer <= 0f) {
+                wanderingDirectionDeltaTimer = CreatureConstants.WANDERING_COOLDOWN;
+                return new Vector2(direction[Random.Range(0, 2)], direction[Random.Range(0, 2)]);
+            }
+            return new Vector2(0, 0);
+        } else {
+            return target.transform.position - transform.position;
+        }
     }
 }

@@ -11,6 +11,9 @@ public class Doritos : Creature {
     private GameObject doritosChip;
     private float doritosRangeDeltaTime = CreatureConstants.RANGE_COOLDOWN;
 
+    public float xDirection = 1;
+    public float yDirection = 1;
+
     public void Start() {
         creatureType = CreatureType.DORITOS;
         doritosChip = Resources.Load("Prefabs/Projectiles/DoritosChip") as GameObject;
@@ -20,7 +23,8 @@ public class Doritos : Creature {
     }
 
     public void FixedUpdate() {
-        doritosRangeDeltaTime--;
+        doritosRangeDeltaTime -= Time.deltaTime;
+        wanderingDirectionDeltaTimer -= Time.deltaTime;
         Act();
     }
 
@@ -30,13 +34,7 @@ public class Doritos : Creature {
     }
 
     protected override void Move() {
-        Walk();
-        //Climb();
-        StuckSaver();
-    }
-
-    protected override void MeleeAttack() {
-
+        Fly();
     }
 
     protected override void RangeAttack() {
@@ -56,11 +54,10 @@ public class Doritos : Creature {
         }
     }
 
-    private void Walk() {
-        rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW, 0));
-    }
-
-    private void Climb() {
-        rb.AddForce(new Vector2(0, CreatureConstants.VELOCITY_LOW * 3));
+    private void Fly() {
+        Vector2 vec = GetTargetDirection();
+        xDirection = vec.x == 0 ? xDirection : vec.x;
+        yDirection = vec.y == 0 ? yDirection : vec.y;
+        rb.velocity = new Vector2(CreatureConstants.VELOCITY_LOW * xDirection, CreatureConstants.VELOCITY_LOW * yDirection);
     }
 }
