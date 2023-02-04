@@ -7,28 +7,34 @@ public class ErasePalette : MonoBehaviour {
     public Grid grid;
     public Tilemap tilemap;
     public TileBase brokenTile;
-
+    private bool mouseDown = false;
     void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0))
+        {
+            mouseDown = true;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            mouseDown = false;
+        }
+
+        if (mouseDown)
+        {
             FunctionToGetRidOfTile();
         }
+
     }
 
     private void FunctionToGetRidOfTile() {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int position = grid.WorldToCell(mousePos * 10);
-
-
-        tilemap.SetTile(position, AssignTile(tilemap.GetTile<Tile>(position)));
-        tilemap.SetTile(new Vector3Int(position.x + 1, position.y - 1, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x + 1, position.y - 1, position.z))));
-        tilemap.SetTile(new Vector3Int(position.x + 1, position.y + 1, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x + 1, position.y + 1, position.z))));
-        tilemap.SetTile(new Vector3Int(position.x - 1, position.y - 1, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x - 1, position.y - 1, position.z))));
-        tilemap.SetTile(new Vector3Int(position.x - 1, position.y + 1, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x - 1, position.y + 1, position.z))));
-        tilemap.SetTile(new Vector3Int(position.x + 1, position.y, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x + 1, position.y, position.z))));
-        tilemap.SetTile(new Vector3Int(position.x, position.y + 1, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x, position.y + 1, position.z))));
-        tilemap.SetTile(new Vector3Int(position.x, position.y - 1, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x, position.y - 1, position.z))));
-        tilemap.SetTile(new Vector3Int(position.x - 1, position.y, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x - 1, position.y, position.z))));
-
+        for (int i = -2; i <= 2; i++)
+        {
+            for (int j = -2; j <= 2; j++)
+            {
+                tilemap.SetTile(new Vector3Int(position.x + i, position.y - j, position.z), AssignTile(tilemap.GetTile<Tile>(new Vector3Int(position.x + i, position.y - j, position.z))));
+            }
+        }
     }
 
     private TileBase AssignTile(TileBase tb) {
