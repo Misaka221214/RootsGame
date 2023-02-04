@@ -6,21 +6,32 @@ public abstract class Creature : MonoBehaviour {
     public GameObject target;
     public Rigidbody2D rb;
     public bool isAlly;
+    public CreatureType creatureType;
+
+    private float stuckSaverDeltaTimer = CreatureConstants.STUCK_COOLDOWN;
 
     protected abstract void Act();
     protected abstract void Move();
     protected abstract void MeleeAttack();
     protected abstract void RangeAttack();
+    public abstract void TakeDamage(int damage);
 
     private void Start() {
         isAlly = GetComponent<Creature>().CompareTag("Ally");
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
     }
 
     protected void StuckSaver() {
-        if (Mathf.Abs(rb.velocity.x) < CreatureConstants.STUCK_VELOCITY_THRESHOLD) {
-            rb.AddForce(new Vector2(0, CreatureConstants.STUCK_JUMP));
+        stuckSaverDeltaTimer--;
+        if (stuckSaverDeltaTimer < 0f && Mathf.Abs(rb.velocity.x) < CreatureConstants.STUCK_VELOCITY_THRESHOLD) {
+            stuckSaverDeltaTimer = CreatureConstants.STUCK_COOLDOWN;
+            rb.AddForce(new Vector2(0, CreatureConstants.STUCK_JUMP * 5));
         }
+    }
+
+    public virtual void Die() {
+        Destroy(transform.gameObject);
     }
 
     protected void SearchTarget() {
