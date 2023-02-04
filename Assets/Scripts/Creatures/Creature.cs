@@ -34,6 +34,12 @@ public abstract class Creature : MonoBehaviour {
         Destroy(transform.gameObject);
     }
 
+    public void PushBack(int direction, Vector2 force) {
+        if (rb != null) {
+            rb.AddForce(force * direction);
+        }
+    }
+
     protected void SearchTarget() {
 
     }
