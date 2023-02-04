@@ -3,6 +3,7 @@ Shader "Hidden/FOWShader"
     Properties
     {
         _MainTex ("FOWTexture", 2D) = "white" {}
+        _TransparencyTolerance ("FOWTexture", Float) = 0.9
     }
     SubShader
     {
@@ -40,37 +41,47 @@ Shader "Hidden/FOWShader"
             }
 
             sampler2D _MainTex;
-
+            float _TransparencyTolerance;
+            
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                if (col.a == 0)
+                if (col.a < _TransparencyTolerance)
                 {
+                    col.r = 0;
+                    col.g = 0;
+                    col.b = 0;
+                    col.a = 0;
                     return col;
                 }
                 col.r = 0;
                 col.g = 0;
                 col.b = 0;
                 int minDist = 100;
-                int count = 0;
-                for (int j = -2; j <= 2; j++)
+                float count = 0;
+                int rad = 10;
+                
+                for (int j = - rad; j <= rad; j++)
                 {
-                    for (int k = -2; k <= 2; k++)
+                    for (int k = -rad; k <= rad; k++)
                     {
-                        fixed4 neib = tex2D(_MainTex, i.uv + float2(j*0.003, k*0.003));
-                        if(neib.a ==0)
+                        fixed4 neib = tex2D(_MainTex, i.uv + float2(j*0.0005, k*0.0005));
+                        if(neib.a < _TransparencyTolerance)
                         {
-                            count ++;
+                            count += 1.f;
                         }
-                        if (neib.a == 0 && abs(j) + abs(k) < minDist)
+                        if (neib.a < _TransparencyTolerance && abs(j) + abs(k) < minDist)
                         {
                             minDist = abs(j)+abs(k);
                         }
                     }
                 }
-                if (minDist <= 4)
+                if (minDist <= 2)
                 {
-                    col.a = (25 - count) / 25.f;
+                    col.a = 0;
+                } else if (minDist <= rad * 2 +1)
+                {
+                    col.a = ((2 * rad + 1)*(2 * rad + 1) - count) / ( (2 * rad + 1)*(2 * rad + 1));
                 }
                 return col;
             }
