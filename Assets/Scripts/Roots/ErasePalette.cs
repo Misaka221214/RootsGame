@@ -33,23 +33,35 @@ public class ErasePalette : MonoBehaviour {
             {
                 if (i * i + j * j < range * range)
                 {
-                    TileInfo tileInfo = TryBeakTile(position.x + i, position.y + j, position.z);
                     Vector3Int pos = new Vector3Int(position.x + i, position.y + j, position.z);
-                    if (tileInfo.maxHealth == 0)
+
+                    TileBase tb = tilemap.GetTile<Tile>(pos);
+                    if (!tb)
                     {
                         continue;
-                    }
-                    if (tileInfo.currHealth == 0)
+                    } else if (tb.name == "EmptyHole")
                     {
-                        tilemap.SetTile(pos, null);
+                        RevealEmptyHole(pos);
                     }
                     else
                     {
-                        Color c = tilemap.GetColor(pos);
-                        c.a = (tileInfo.currHealth * 1f) / tileInfo.maxHealth;
-                        // Disable color lock
-                        tilemap.SetTileFlags(pos, TileFlags.None);
-                        tilemap.SetColor(pos, c);
+                        TileInfo tileInfo = TryBeakTile(position.x + i, position.y + j, position.z);
+                        if (tileInfo.maxHealth == 0)
+                        {
+                            continue;
+                        }
+                        if (tileInfo.currHealth == 0)
+                        {
+                            tilemap.SetTile(pos, null);
+                        }
+                        else
+                        {
+                            Color c = tilemap.GetColor(pos);
+                            c.a = (tileInfo.currHealth * 1f) / tileInfo.maxHealth;
+                            // Disable color lock
+                            tilemap.SetTileFlags(pos, TileFlags.None);
+                            tilemap.SetColor(pos, c);
+                        }
                     }
                 }
             }
@@ -106,6 +118,34 @@ public class ErasePalette : MonoBehaviour {
                 info.maxHealth = 3;
                 info.currHealth = 3;
                 return info;
+        }
+    }
+
+    private void RevealEmptyHole(Vector3Int position)
+    {
+        int x = position.x;
+        int y = position.y;
+        Stack<int> xStack = new Stack<int>();
+        Stack<int> yStack = new Stack<int>();
+        xStack.Push(x);
+        yStack.Push(y);
+        while (xStack.Count != 0)
+        {
+            x = xStack.Pop();
+            y = yStack.Pop();
+            TileBase tb = tilemap.GetTile<Tile>(new Vector3Int(x, y, position.z));
+            if (tb && tb.name =="EmptyHole")
+            {
+                tilemap.SetTile(new Vector3Int(x, y, position.z), null);
+                xStack.Push(x-1);
+                yStack.Push(y);
+                xStack.Push(x+1);
+                yStack.Push(y);
+                xStack.Push(x);
+                yStack.Push(y+1);
+                xStack.Push(x);
+                yStack.Push(y-1);
+            }
         }
     }
 }
