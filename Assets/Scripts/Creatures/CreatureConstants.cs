@@ -54,6 +54,8 @@ public enum CreatureType {
 
 public static class CreatureData
 {
+    // TODO: Add data for missing creatures
+
     public static Dictionary<CreatureType, String> CreatureName = new Dictionary<CreatureType, String>(){
     {
         CreatureType.SLIME, "Slime"
@@ -107,5 +109,23 @@ public static class CreatureData
             CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         }
     };
-    
+
+    public static Dictionary<CreatureType, GameObject> PlayerCreaturePrefabs = new Dictionary<CreatureType, GameObject>(){
+        {
+            CreatureType.SLIME, Resources.Load("Prefabs/Creatures/Slime") as GameObject
+        },{
+            CreatureType.RABBIT, Resources.Load("Prefabs/Creatures/Rabbit") as GameObject
+        },{
+            CreatureType.NEYMAR, Resources.Load("Prefabs/Creatures/Neymar") as GameObject
+        },{
+            CreatureType.CTHULHU, Resources.Load("Prefabs/Creatures/Cthulhu") as GameObject
+        },{
+            CreatureType.DORITOS, Resources.Load("Prefabs/Creatures/Doritos") as GameObject
+        },{
+            CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/DoritosRabbit") as GameObject
+        }//{
+            // CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
+        //}
+    };
+
 }

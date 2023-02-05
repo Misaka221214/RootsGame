@@ -29,6 +29,7 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
+        // TODO: Remove TestOnly Stuff
         TestOnly_Init();
     }
 
