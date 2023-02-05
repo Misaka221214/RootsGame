@@ -9,6 +9,7 @@ public abstract class Creature : MonoBehaviour {
     public CreatureType creatureType;
 
     private float stuckSaverDeltaTimer = CreatureConstants.STUCK_COOLDOWN;
+    private float searchEnemyDeltaTimer = 3f;
     protected float wanderingDirectionDeltaTimer = CreatureConstants.WANDERING_COOLDOWN;
 
     protected readonly List<int> direction = new() { -1, 1 };
@@ -51,6 +52,30 @@ public abstract class Creature : MonoBehaviour {
             return new Vector2(0, 0);
         } else {
             return target.transform.position - transform.position;
+        }
+    }
+
+    public void SearchEnemy() {
+        searchEnemyDeltaTimer -= Time.deltaTime;
+
+        if(searchEnemyDeltaTimer <= 0) {
+            searchEnemyDeltaTimer = 3f;
+
+            GameObject[] gos = GameObject.FindGameObjectsWithTag(isAlly ? "Enemy" : "Ally");
+            foreach (GameObject go in gos) {
+                Vector3 vec = transform.position - go.transform.position;
+                float distance = Mathf.Abs(vec.x) + Mathf.Abs(vec.y);
+
+                if (target == null && distance < 20) {
+                    target = go;
+                    break;
+                }
+
+                if (target.Equals(go) && distance > 20) {
+                    target = null;
+                    break;
+                }
+            }
         }
     }
 }

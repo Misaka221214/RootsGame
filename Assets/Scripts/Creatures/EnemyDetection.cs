@@ -15,9 +15,9 @@ public class EnemyDetection : MonoBehaviour {
         AddTarget(collision.gameObject);
     }
 
-    //private void OnTriggerStay2D(Collider2D collision) {
-    //    AddTarget(collision.gameObject);
-    //}
+    private void OnTriggerStay2D(Collider2D collision) {
+        AddTarget(collision.gameObject);
+    }
 
     private void OnTriggerExit2D(Collider2D collision) {
         RemoveTarget(collision.gameObject);

@@ -16,6 +16,7 @@ public class Slime : Creature {
     public void FixedUpdate() {
         wanderingDirectionDeltaTimer -= Time.deltaTime;
         Act();
+        SearchEnemy();
     }
 
     protected override void Act() {
@@ -42,6 +43,13 @@ public class Slime : Creature {
     private void Walk() {
         float dir = GetTargetDirection().x;
         xDirection = dir == 0 ? xDirection : dir;
+
+        if (xDirection > 0) {
+            xDirection = 1;
+        } else {
+            xDirection = -1;
+        }
+
         rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW * xDirection, 0));
     }
 
