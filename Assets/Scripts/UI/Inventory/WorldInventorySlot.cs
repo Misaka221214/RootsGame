@@ -41,8 +41,10 @@ public class WorldInventorySlot : MonoBehaviour
     {
         if (CreatureData.CreatureSprite.ContainsKey(creature))
         {
-            Sprite creatureSprite = CreatureData.CreatureSprite[creature];
+            GameObject go = CreatureData.PlayerCreaturePrefabs[creature] as GameObject;
+            Sprite creatureSprite = go.GetComponent<SpriteRenderer>().sprite;
             itemImg.sprite = creatureSprite;
+            itemImg.color = go.GetComponent<SpriteRenderer>().color;
             creatureType = creature;
         }
         else

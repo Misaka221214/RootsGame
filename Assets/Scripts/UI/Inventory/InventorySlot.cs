@@ -39,8 +39,10 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     {
         if (CreatureData.CreatureSprite.ContainsKey(creature))
         {
-            Sprite creatureSprite = CreatureData.CreatureSprite[creature];
+            GameObject go = CreatureData.PlayerCreaturePrefabs[creature] as GameObject;
+            Sprite creatureSprite = go.GetComponent<SpriteRenderer>().sprite;
             itemImg.sprite = creatureSprite;
+            itemImg.color = go.GetComponent<SpriteRenderer>().color;
             debugNameTxt.text = creature.ToString();
             creatureType = creature;
         } else

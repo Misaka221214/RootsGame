@@ -41,8 +41,11 @@ public class InputSlot : MonoBehaviour
         this.creature = creature;
         isEmpty = false;
 
-        Sprite creatureSprite = CreatureData.CreatureSprite[creature];
+        GameObject go = CreatureData.PlayerCreaturePrefabs[creature] as GameObject;
+        Sprite creatureSprite = go.GetComponent<SpriteRenderer>().sprite;
         contentImg.sprite = creatureSprite;
+        contentImg.color = go.GetComponent<SpriteRenderer>().color;
+
         contentImg.gameObject.SetActive(true);
         removeBtn.gameObject.SetActive(true);
     }

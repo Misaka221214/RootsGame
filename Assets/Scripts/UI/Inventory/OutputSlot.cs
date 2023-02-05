@@ -28,8 +28,11 @@ public class OutputSlot : MonoBehaviour
 
     public void ShowOutput(CreatureType creature)
     {
-        Sprite creatureSprite = CreatureData.CreatureSprite[creature];
+        GameObject go = CreatureData.PlayerCreaturePrefabs[creature] as GameObject;
+        Sprite creatureSprite = go.GetComponent<SpriteRenderer>().sprite;
         contentImg.sprite = creatureSprite;
+        contentImg.color = go.GetComponent<SpriteRenderer>().color;
+
         contentImg.gameObject.SetActive(true);
         outputText.gameObject.SetActive(true);
         bg.gameObject.SetActive(true);
