@@ -116,55 +116,55 @@ public static class CreatureData
     
     public static Dictionary<CreatureType, UnityEngine.Object> CreatureEnemyObject = new Dictionary<CreatureType, UnityEngine.Object>(){
         {
-            CreatureType.SLIME, Resources.Load("Prefabs/Creatures 1/SlimeEnemy")
+            CreatureType.SLIME, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.RABBIT, Resources.Load("Prefabs/Creatures 1/SlimeEnemy")
+            CreatureType.RABBIT, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.NEYMAR, Resources.Load("Prefabs/Creatures 1/SlimeEnemy")
+            CreatureType.NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.CTHULHU, Resources.Load("Prefabs/Creatures 1/SlimeEnemy")
+            CreatureType.CTHULHU, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.DORITOS, Resources.Load("Prefabs/Creatures 1/SlimeEnemy")
+            CreatureType.DORITOS, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures 1/SlimeEnemy")
+            CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures 1/SlimeEnemy")
+            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         }
     };
 
     public static Dictionary<CreatureType, GameObject> PlayerCreaturePrefabs = new Dictionary<CreatureType, GameObject>(){
         {
-            CreatureType.SLIME, Resources.Load("Prefabs/Creatures 1/Slime") as GameObject
+            CreatureType.SLIME, Resources.Load("Prefabs/Creatures/Slime") as GameObject
         },{
-            CreatureType.RABBIT, Resources.Load("Prefabs/Creatures 1/Rabbit") as GameObject
+            CreatureType.RABBIT, Resources.Load("Prefabs/Creatures/Rabbit") as GameObject
         },{
-            CreatureType.NEYMAR, Resources.Load("Prefabs/Creatures 1/Neymar") as GameObject
+            CreatureType.NEYMAR, Resources.Load("Prefabs/Creatures/Neymar") as GameObject
         },{
-            CreatureType.CTHULHU, Resources.Load("Prefabs/Creatures 1/Cthulhu") as GameObject
+            CreatureType.CTHULHU, Resources.Load("Prefabs/Creatures/Cthulhu") as GameObject
         },{
-            CreatureType.DORITOS, Resources.Load("Prefabs/Creatures 1/Doritos") as GameObject
+            CreatureType.DORITOS, Resources.Load("Prefabs/Creatures/Doritos") as GameObject
         },{
-            CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures 1/DoritosRabbit") as GameObject
+            CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/DoritosRabbit") as GameObject
         },{
-            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures 1/SlimeNeymar") as GameObject
+            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeNeymar") as GameObject
         },{
-            CreatureType.SLIME_CTHULHU, Resources.Load("Prefabs/Creatures 1/SlimeCthulhu") as GameObject
+            CreatureType.SLIME_CTHULHU, Resources.Load("Prefabs/Creatures/SlimeCthulhu") as GameObject
         },{
-            CreatureType.NYAR, Resources.Load("Prefabs/Creatures 1/Nyar") as GameObject
+            CreatureType.NYAR, Resources.Load("Prefabs/Creatures/Nyar") as GameObject
         },{
-            CreatureType.GREEN_DORITOS, Resources.Load("Prefabs/Creatures 1/GreenDoritos") as GameObject
+            CreatureType.GREEN_DORITOS, Resources.Load("Prefabs/Creatures/GreenDoritos") as GameObject
         },{
-            CreatureType.DORITOS_OCTOPUS, Resources.Load("Prefabs/Creatures 1/DoritosOctopus") as GameObject
+            CreatureType.DORITOS_OCTOPUS, Resources.Load("Prefabs/Creatures/DoritosOctopus") as GameObject
         },{
-            CreatureType.GREEN_NYAR, Resources.Load("Prefabs/Creatures 1/GreenNyar") as GameObject
+            CreatureType.GREEN_NYAR, Resources.Load("Prefabs/Creatures/GreenNyar") as GameObject
         },{
-            CreatureType.GREEN_RABBIT_OCTOPUS, Resources.Load("Prefabs/Creatures 1/GreenRabbitOctopus") as GameObject
+            CreatureType.GREEN_RABBIT_OCTOPUS, Resources.Load("Prefabs/Creatures/GreenRabbitOctopus") as GameObject
         },
         {
-            CreatureType.GREEN_DORITOS_RABBIT, Resources.Load("Prefabs/Creatures 1/GreenDoritosRabbit") as GameObject
+            CreatureType.GREEN_DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/GreenDoritosRabbit") as GameObject
         },
         {
-            CreatureType.TRASH, Resources.Load("Prefabs/Creatures 1/Trash") as GameObject
+            CreatureType.TRASH, Resources.Load("Prefabs/Creatures/Trash") as GameObject
         }
 
     };
