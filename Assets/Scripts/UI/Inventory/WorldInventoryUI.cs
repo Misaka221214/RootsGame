@@ -81,6 +81,7 @@ public class WorldInventoryUI : MonoBehaviour
 
         if (CreatureData.PlayerCreaturePrefabs.ContainsKey(creature))
         {
+            GameObject main = GameObject.FindGameObjectWithTag("MainCamera");
             GameObject go = Instantiate(CreatureData.PlayerCreaturePrefabs[creature],
                 defaultSpawnPosition, Quaternion.identity);
             inventoryManager.RemoveCreature(creature);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,6 +12,7 @@ public class TileManagement : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         tilemap = GetComponent<Tilemap>();
+        grid = GetComponentInParent<Grid>();
     }
 
     // Update is called once per frame
@@ -19,13 +21,16 @@ public class TileManagement : MonoBehaviour {
     }
 
     public void UserHitTile(Vector3Int pos) {
-        if (tilemap) {
+        if (tilemap)
+        {
+            RemoveTilemapHelper(pos);
             TileBase tb = tilemap.GetTile<Tile>(pos);
             if (!tb) {
                 return;
             }
             if (tb.name == "EmptyHole") {
-                RevealEmptyHole(pos);
+                // RevealEmptyHole(pos);
+                //Use helper
             } else {
                 TileInfo tileInfo = TryBeakTile(pos);
                 if (tileInfo.maxHealth == 0) {
@@ -44,14 +49,30 @@ public class TileManagement : MonoBehaviour {
         }
     }
 
+    private void RemoveTilemapHelper(Vector3Int pos)
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("TilemapHelper");
+        foreach (var obj in objects)
+        {
+            bool contains = obj.GetComponent<BoxCollider2D>().bounds.Contains(grid.CellToWorld(pos) / 10f);
+            if (contains)
+            {
+                Destroy(obj);
+            }
+
+            Debug.Log(contains);
+        }
+    }
+
     public void ForceRemoveTile(Vector3Int pos) {
         if (tilemap) {
             TileBase tb = tilemap.GetTile<Tile>(pos);
+            RemoveTilemapHelper(pos);
             if (!tb) {
                 return;
             }
             if (tb.name == "EmptyHole") {
-                RevealEmptyHole(pos);
+                // RevealEmptyHole(pos);
             } else {
                 if (tileInfoMap.ContainsKey(pos)) {
                     tileInfoMap.Remove(pos);
@@ -69,7 +90,7 @@ public class TileManagement : MonoBehaviour {
 
         if (!tileInfoMap.ContainsKey(pos)) {
             TileBase tb = tilemap.GetTile<Tile>(new Vector3Int(pos.x, pos.y, pos.z));
-            if (tb == null) {
+            if (!tb) {
                 TileInfo tileInfo;
                 tileInfo.maxHealth = 0;
                 tileInfo.currHealth = 0;
@@ -109,23 +130,29 @@ public class TileManagement : MonoBehaviour {
         int y = position.y;
         Stack<int> xStack = new Stack<int>();
         Stack<int> yStack = new Stack<int>();
+        HashSet<Vector3Int> visited = new HashSet<Vector3Int>();
         xStack.Push(x);
         yStack.Push(y);
         while (xStack.Count != 0) {
             x = xStack.Pop();
             y = yStack.Pop();
-            TileBase tb = tilemap.GetTile<Tile>(new Vector3Int(x, y, position.z));
-            if (tb && tb.name == "EmptyHole") {
-                tilemap.SetTile(new Vector3Int(x, y, position.z), null);
-                xStack.Push(x - 1);
-                yStack.Push(y);
-                xStack.Push(x + 1);
-                yStack.Push(y);
-                xStack.Push(x);
-                yStack.Push(y + 1);
-                xStack.Push(x);
-                yStack.Push(y - 1);
+            Vector3Int pos = new Vector3Int(x, y, position.z);
+            TileBase tb = tilemap.GetTile<Tile>(pos);
+            if (visited.Contains(pos))
+            {
+                continue;
             }
+            visited.Add(pos);
+            if (!tb || tb.name != "EmptyHole") continue;
+            tilemap.SetTile(new Vector3Int(x, y, position.z), null);
+            xStack.Push(x - 1);
+            yStack.Push(y);
+            xStack.Push(x + 1);
+            yStack.Push(y);
+            xStack.Push(x);
+            yStack.Push(y + 1);
+            xStack.Push(x);
+            yStack.Push(y - 1);
         }
     }
 }
