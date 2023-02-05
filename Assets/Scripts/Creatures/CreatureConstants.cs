@@ -25,8 +25,8 @@ public static class CreatureConstants {
     public static int AMMO_MID = 10;
     public static int AMMO_HIGH = 15;
 
-    public static float MELEE_COOLDOWN = 50f;
-    public static float RANGE_COOLDOWN = 50f;
+    public static float MELEE_COOLDOWN = 5f;
+    public static float RANGE_COOLDOWN = 5f;
 
     public static float WANDERING_COOLDOWN = 3f;
 
