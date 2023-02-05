@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doritos : Creature {
+public class DoritosRabbit : Creature {
     public float health = CreatureConstants.HEALTH_LOW;
     public float mass = CreatureConstants.MASS_LOW;
     public float velocity = CreatureConstants.VELOCITY_LOW;
     public int ammo = CreatureConstants.AMMO_LOW;
 
     private GameObject doritosChip;
-    private float doritosRangeDeltaTime = CreatureConstants.RANGE_COOLDOWN;
 
     public float xDirection = 1;
     public float yDirection = 1;
 
     public void Start() {
-        creatureType = CreatureType.DORITOS;
+        creatureType = CreatureType.DORITOS_RABBIT;
         doritosChip = Resources.Load("Prefabs/Projectiles/DoritosChip") as GameObject;
 
         rb = GetComponent<Rigidbody2D>();
@@ -23,7 +22,6 @@ public class Doritos : Creature {
     }
 
     public void FixedUpdate() {
-        doritosRangeDeltaTime -= Time.deltaTime;
         wanderingDirectionDeltaTimer -= Time.deltaTime;
         Act();
         SearchEnemy();
@@ -31,7 +29,6 @@ public class Doritos : Creature {
 
     protected override void Act() {
         Move();
-        RangeAttack();
     }
 
     protected override void Move() {
@@ -39,12 +36,16 @@ public class Doritos : Creature {
     }
 
     protected override void RangeAttack() {
-        if (doritosRangeDeltaTime < 0 && target != null) {
-            doritosRangeDeltaTime = CreatureConstants.RANGE_COOLDOWN;
+    }
+
+    public override void Die() {
+        for (int i = 0; i < 10; i++) {
             GameObject chip = Instantiate(doritosChip, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
             chip.tag = tag;
-            chip.GetComponent<Rigidbody2D>().AddForce(new Vector2(200, 200));
+            chip.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-2, 3), 10), ForceMode2D.Impulse);
         }
+
+        Destroy(transform.gameObject);
     }
 
     public override void TakeDamage(int damage) {

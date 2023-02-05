@@ -26,7 +26,7 @@ public static class CreatureConstants {
     public static int AMMO_HIGH = 15;
 
     public static float MELEE_COOLDOWN = 5f;
-    public static float RANGE_COOLDOWN = 5f;
+    public static float RANGE_COOLDOWN = 3f;
 
     public static float WANDERING_COOLDOWN = 3f;
 
@@ -41,7 +41,14 @@ public enum CreatureType {
     DORITOS,
     DORITOS_RABBIT,
     SLIME_NEYMAR,
-    Null
+    SLIME_CTHULHU,
+    NYAR,
+    GREEN_DORITOS,
+    DORITOS_OCTOPUS,
+    GREEN_NYAR,
+    GREEN_RABBIT_OCTOPUS,
+    GREEN_DORITOS_RABBIT,
+    TRASH
 }
 
 public static class CreatureData
