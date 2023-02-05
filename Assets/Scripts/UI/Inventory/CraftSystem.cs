@@ -42,9 +42,9 @@ public class CraftSystem : MonoBehaviour
         if (inputList.Count == 2)
         {
             var output = GetRecipeOutput();
-            if (output == CreatureType.Null)
+            if (output == CreatureType.TRASH)
             {
-                // TODO: Garbage?
+                // TODO
             } else
             {
                 outputSlot.ShowOutput(output);
@@ -58,7 +58,7 @@ public class CraftSystem : MonoBehaviour
 
     public CreatureType GetRecipeOutput()
     {
-        var result = CreatureType.Null;
+        var result = CreatureType.TRASH;
 
         foreach (var recipe in recipes)
         {
