@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4858846897614924505}
   - component: {fileID: 4858846897614924516}
   - component: {fileID: 6240742075151449182}
+  - component: {fileID: 5599516978175349787}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Ally
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4858846897614924504}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.000007972963, y: 0.00872777, z: -0.00091348134, w: 0.9999615}
   m_LocalPosition: {x: 5.028, y: 1.373, z: 0}
   m_LocalScale: {x: 2.0999887, y: 2.0630488, z: 2.075293}
   m_ConstrainProportionsScale: 0
@@ -35,7 +36,7 @@ Transform:
   - {fileID: 754575394756018343}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: -0.105}
 --- !u!212 &4858846897614924506
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -146,6 +147,26 @@ MonoBehaviour:
   velocity: 5
   ammo: 5
   xDirection: 1
+--- !u!95 &5599516978175349787
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858846897614924504}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd34da88acc124aa3be7f906500a1a88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9033061663341149672
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +178,6 @@ GameObject:
   - component: {fileID: 754575394756018343}
   - component: {fileID: 8816539688211995708}
   - component: {fileID: 2925204873925897382}
-  - component: {fileID: 3577922756262429027}
   m_Layer: 0
   m_Name: MeleeRange
   m_TagString: Untagged
@@ -248,23 +268,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!95 &3577922756262429027
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9033061663341149672}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9db6ddd95266a409eb9e52412d8b3d8e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
