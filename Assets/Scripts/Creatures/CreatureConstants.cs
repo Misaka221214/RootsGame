@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 public static class CreatureConstants {
     public static float SEARCH_RANGE = 10f;
 
@@ -21,8 +25,8 @@ public static class CreatureConstants {
     public static int AMMO_MID = 10;
     public static int AMMO_HIGH = 15;
 
-    public static float MELEE_COOLDOWN = 50f;
-    public static float RANGE_COOLDOWN = 50f;
+    public static float MELEE_COOLDOWN = 5f;
+    public static float RANGE_COOLDOWN = 5f;
 
     public static float WANDERING_COOLDOWN = 3f;
 
@@ -37,4 +41,62 @@ public enum CreatureType {
     DORITOS,
     DORITOS_RABBIT,
     SLIME_NEYMAR
+}
+
+public static class CreatureData
+{
+    public static Dictionary<CreatureType, String> CreatureName = new Dictionary<CreatureType, String>(){
+    {
+        CreatureType.SLIME, "Slime"
+    },{
+        CreatureType.RABBIT, "Rabbit"
+    },{
+        CreatureType.NEYMAR, "Neymar"
+    },{
+        CreatureType.CTHULHU, "Cthulhu"
+    },{
+        CreatureType.DORITOS, "Doritos"
+    },{
+        CreatureType.DORITOS_RABBIT, "Doritos Rabbit"
+    },{
+        CreatureType.SLIME_NEYMAR, "Slime Neymar"
+    }
+    };
+    
+    public static Dictionary<CreatureType, Sprite> CreatureSprite = new Dictionary<CreatureType, Sprite>(){
+        {
+            CreatureType.SLIME, Resources.Load("CreatureSprites/slime") as Sprite
+        },{
+            CreatureType.RABBIT, Resources.Load("CreatureSprites/兔子") as Sprite
+        },{
+            CreatureType.NEYMAR, Resources.Load("CreatureSprites/Neymar Idle") as Sprite
+        },{
+            CreatureType.CTHULHU, Resources.Load("CreatureSprites/slime") as Sprite
+        },{
+            CreatureType.DORITOS, Resources.Load("CreatureSprites/slime") as Sprite
+        },{
+            CreatureType.DORITOS_RABBIT, Resources.Load("CreatureSprites/slime") as Sprite
+        },{
+            CreatureType.SLIME_NEYMAR, Resources.Load("CreatureSprites/slime") as Sprite
+        }
+    };
+    
+    public static Dictionary<CreatureType, UnityEngine.Object> CreatureEnemyObject = new Dictionary<CreatureType, UnityEngine.Object>(){
+        {
+            CreatureType.SLIME, Resources.Load("Prefabs/Creatures/SlimeEnemy")
+        },{
+            CreatureType.RABBIT, Resources.Load("Prefabs/Creatures/SlimeEnemy")
+        },{
+            CreatureType.NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
+        },{
+            CreatureType.CTHULHU, Resources.Load("Prefabs/Creatures/SlimeEnemy")
+        },{
+            CreatureType.DORITOS, Resources.Load("Prefabs/Creatures/SlimeEnemy")
+        },{
+            CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/SlimeEnemy")
+        },{
+            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
+        }
+    };
+    
 }

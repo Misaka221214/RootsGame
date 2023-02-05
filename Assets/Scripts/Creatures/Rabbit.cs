@@ -12,13 +12,14 @@ public class Rabbit : Creature {
     private float jumpDeltaTime = CreatureConstants.RABBIT_JUMP_COOLDOWN;
 
     public void Awake() {
-        creatureType = CreatureType.SLIME;
+        creatureType = CreatureType.RABBIT;
     }
 
     public void FixedUpdate() {
         wanderingDirectionDeltaTimer -= Time.deltaTime;
         jumpDeltaTime -= Time.deltaTime;
         Act();
+        SearchEnemy();
     }
 
     protected override void Act() {
@@ -44,6 +45,13 @@ public class Rabbit : Creature {
     private void Jump() {
         float dir = GetTargetDirection().x;
         xDirection = dir == 0 ? xDirection : dir;
+
+        if (xDirection > 0) {
+            xDirection = 1;
+        } else {
+            xDirection = -1;
+        }
+
         if (jumpDeltaTime <= 0f) {
             jumpDeltaTime = CreatureConstants.RABBIT_JUMP_COOLDOWN;
             rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW * xDirection, CreatureConstants.VELOCITY_LOW * 2), ForceMode2D.Impulse);

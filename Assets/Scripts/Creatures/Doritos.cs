@@ -26,6 +26,7 @@ public class Doritos : Creature {
         doritosRangeDeltaTime -= Time.deltaTime;
         wanderingDirectionDeltaTimer -= Time.deltaTime;
         Act();
+        SearchEnemy();
     }
 
     protected override void Act() {
@@ -38,7 +39,7 @@ public class Doritos : Creature {
     }
 
     protected override void RangeAttack() {
-        if (doritosRangeDeltaTime < 0 && target != null) {
+        if (doritosRangeDeltaTime < 0) {
             doritosRangeDeltaTime = CreatureConstants.RANGE_COOLDOWN;
             GameObject chip = Instantiate(doritosChip, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
             chip.tag = tag;

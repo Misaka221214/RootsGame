@@ -7,6 +7,7 @@ TagManager:
   - Ally
   - Enemy
   - Logic
+  - TileMap
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - TileMap
+  - Detection
+  - Melee
   - 
   - 
   - 
@@ -43,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FogOfWar
+    uniqueID: 2584448293
     locked: 0
