@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  Interval: 0.5
+  Interval: 5
   isActive: 0
   tileManagement: {fileID: 0}
 --- !u!114 &353468256118784690

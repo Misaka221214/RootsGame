@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         // TODO: Remove TestOnly Stuff
-        // TestOnly_Init();
+        TestOnly_Init();
         AddInventory(CreatureType.NEYMAR);
     }
 
