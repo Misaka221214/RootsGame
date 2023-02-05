@@ -47,6 +47,10 @@ public class SlimeNeymar : Creature {
     }
 
     public override void Die() {
+        if (gameObject.CompareTag("Enemy")) {
+            inventoryManager = GameObject.Find("InventoryManager");
+            inventoryManager.GetComponent<InventoryManager>().AddInventory(creatureType);
+        }
         GameObject go1 = Instantiate(slime, transform);
         go1.tag = tag;
         GameObject go2 = Instantiate(slime, transform);

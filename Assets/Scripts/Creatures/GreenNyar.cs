@@ -58,6 +58,10 @@ public class GreenNyar : Creature {
     }
 
     public override void Die() {
+        if (gameObject.CompareTag("Enemy")) {
+            inventoryManager = GameObject.Find("InventoryManager");
+            inventoryManager.GetComponent<InventoryManager>().AddInventory(creatureType);
+        }
         rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW * xDirection, 0), ForceMode2D.Impulse);
         GameObject explod = Instantiate(explosion, transform.position, Quaternion.identity);
         explod.tag = tag;
