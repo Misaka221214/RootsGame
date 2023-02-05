@@ -22,6 +22,11 @@ public class InventoryManager : MonoBehaviour
     // public List<InventoryItem> allitems = new List<InventoryItem>();
     public Dictionary<CreatureType, int> creatureToQuantity = new();
 
+    private void Awake()
+    {
+
+    }
+
     void Start()
     {
         
@@ -35,7 +40,7 @@ public class InventoryManager : MonoBehaviour
 
     public void AddInventory(CreatureType type)
     {
-        var newItem = new InventoryItem(type);
+        //var newItem = new InventoryItem(type);
 
         //allitems.Add(newItem);
         //Debug.Log(allitems.Count);

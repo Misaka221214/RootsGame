@@ -3,21 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class InventoryUI : MonoBehaviour
+public class WorldInventoryUI : MonoBehaviour
 {
-    public List<InventorySlot> slots;
+    public Vector3 defaultSpawnPosition;
+    public List<WorldInventorySlot> slots;
     private InventoryManager inventoryManager;
 
-    private void Awake()
-    {
-
-    }
-
     void Start()
-    {
-        // TODO: Should InventoryManager be a Singleton?
-        // inventoryManager = FindObjectOfType<InventoryManager>();
-
+    {        
         TestOnly_SetUp();
         UpdateDisplay();
     }
@@ -40,8 +33,6 @@ public class InventoryUI : MonoBehaviour
         inventoryManager.AddInventory(CreatureType.SLIME);
         inventoryManager.AddInventory(CreatureType.RABBIT);
 # endif
-
-        UpdateDisplay();
     }
 
     public void UpdateDisplay()
@@ -55,11 +46,21 @@ public class InventoryUI : MonoBehaviour
                 CreatureType type = inventoryManager.creatureToQuantity.ElementAt(i).Key;
                 int val = inventoryManager.creatureToQuantity[type];
                 slots[i].UpdateDisplay(type, val);
-            } else
+            }
+            else
             {
                 slots[i].HideDisplay();
             }
         }
 
+    }
+
+    public void SpawnCreature(CreatureType creature)
+    {
+        // TODO: Implement
+        Debug.Log("TODO: Spawn Creature at default world position");
+
+        inventoryManager.RemoveCreature(creature);
+        UpdateDisplay();
     }
 }

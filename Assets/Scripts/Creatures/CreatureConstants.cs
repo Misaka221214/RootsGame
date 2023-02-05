@@ -48,7 +48,8 @@ public enum CreatureType {
     GREEN_NYAR,
     GREEN_RABBIT_OCTOPUS,
     GREEN_DORITOS_RABBIT,
-    TRASH
+    TRASH,
+    NULL
 }
 
 public static class CreatureData
