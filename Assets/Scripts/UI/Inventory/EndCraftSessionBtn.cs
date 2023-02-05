@@ -10,8 +10,7 @@ public class EndCraftSessionBtn : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         craftCanvas.gameObject.SetActive(false);
-        // TODO: Resume Game Loop
-        Debug.Log("TODO: Craft Session Ended. Should Resume Game Loop");
+        GameStatics.IncreamentTurnCount();
     }
 
     // Start is called before the first frame update
