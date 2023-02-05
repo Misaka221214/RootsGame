@@ -26,6 +26,7 @@ public class Doritos : Creature {
         doritosRangeDeltaTime -= Time.deltaTime;
         wanderingDirectionDeltaTimer -= Time.deltaTime;
         Act();
+        SearchEnemy();
     }
 
     protected override void Act() {
