@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
     public Image itemImg;
     public TextMeshProUGUI quantityTxt;
 
     public TextMeshProUGUI debugNameTxt;
+
+    private CraftSystem craftSystem;
+    private CreatureType creatureType;
+
+    private void Awake()
+    {
+        craftSystem = FindObjectOfType<CraftSystem>();
+    }
+
     void Start()
     {
         
@@ -41,5 +51,21 @@ public class InventorySlot : MonoBehaviour
     public void HideDisplay()
     {
         gameObject.SetActive(false);
+    }
+
+    public void AddToInput()
+    {
+        
+    }
+
+    public void RemoveFromInput()
+    {
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // TODO: Can you craft with 2 of the same creature?
+
     }
 }

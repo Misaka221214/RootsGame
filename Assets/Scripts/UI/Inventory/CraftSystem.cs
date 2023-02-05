@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class CraftSystem : MonoBehaviour
 {
-    public List<KeyValuePair<List<CreatureType>, CreatureType>> recipes = new();
+    public List<InputSlot> inputslots;
+
+    private List<KeyValuePair<List<CreatureType>, CreatureType>> recipes = new();
+    private List<CreatureType> inputList = new();
 
     private void Awake()
     {
@@ -34,6 +37,19 @@ public class CraftSystem : MonoBehaviour
     }
 
     public void OnCraft()
+    {
+
+    }
+
+    public void AddInput(CreatureType creatureType)
+    {
+        if (inputList.Count < 2)
+        {
+            inputList.Add(creatureType);
+        }
+    }
+
+    public void UpdateDisplay()
     {
 
     }
