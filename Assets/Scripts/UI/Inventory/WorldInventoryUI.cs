@@ -9,9 +9,21 @@ public class WorldInventoryUI : MonoBehaviour
     public List<WorldInventorySlot> slots;
     private InventoryManager inventoryManager;
 
+    private void OnEnable()
+    {
+        EventManager.OnInventoryUpdated += UpdateDisplay;
+
+        UpdateDisplay();
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnInventoryUpdated -= UpdateDisplay;
+    }
+
     void Start()
     {        
-        TestOnly_SetUp();
+        // TestOnly_SetUp();
         UpdateDisplay();
     }
 

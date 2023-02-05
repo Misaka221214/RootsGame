@@ -5,11 +5,11 @@ using UnityEngine.EventSystems;
 
 public class CloseInventoryBtn : MonoBehaviour, IPointerClickHandler
 {
-    public WorldInventoryUI worldInventory;
+    public GameObject worldInventoryCanvas;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        worldInventory.gameObject.SetActive(false);
+        worldInventoryCanvas.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update

@@ -29,13 +29,25 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
-        
+        TestOnly_Init();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void TestOnly_Init()
+    {
+#if UNITY_EDITOR
+        AddInventory(CreatureType.NEYMAR);
+        AddInventory(CreatureType.NEYMAR);
+        AddInventory(CreatureType.NEYMAR);
+        AddInventory(CreatureType.SLIME);
+        AddInventory(CreatureType.SLIME);
+        AddInventory(CreatureType.RABBIT);
+# endif
     }
 
     public void AddInventory(CreatureType type)
@@ -52,6 +64,8 @@ public class InventoryManager : MonoBehaviour
         {
             creatureToQuantity.Add(type, 1);
         }
+
+        EventManager.OnInventoryUpdated?.Invoke();
     }
 
     public void RemoveCreature(CreatureType type)
@@ -64,5 +78,7 @@ public class InventoryManager : MonoBehaviour
                 creatureToQuantity.Remove(type);
             }
         }
+
+        EventManager.OnInventoryUpdated?.Invoke();
     }
 }
