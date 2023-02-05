@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MikeAttackTestScene.unity
-    guid: 9167dc402b6d6491bb13af5d4da17039
+    path: Assets/Scenes/UndergroundMapPlayground 3.unity
+    guid: 3d0ddd859c6d24a63af4bf2f2c1ef14e
   m_configObjects: {}
