@@ -10,6 +10,11 @@ public class OutputSlot : MonoBehaviour
     public TextMeshProUGUI outputText;
     public GameObject bg;
 
+    private void OnEnable()
+    {
+        ClearSlot();
+    }
+
     void Start()
     {
         ClearSlot();

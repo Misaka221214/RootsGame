@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026ef22e6256e4cf9a6f663a3bd148ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldInventory: {fileID: 6350436454223252905}
+  worldInventoryCanvas: {fileID: 6350436454282908701}
 --- !u!114 &6350436454026341072
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,18 @@ public class InventoryUI : MonoBehaviour
     public List<InventorySlot> slots;
     private InventoryManager inventoryManager;
 
+    private void OnEnable()
+    {
+        EventManager.OnInventoryUpdated += UpdateDisplay;
+
+        UpdateDisplay();
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnInventoryUpdated -= UpdateDisplay;
+    }
+
     private void Awake()
     {
 
@@ -18,7 +30,7 @@ public class InventoryUI : MonoBehaviour
         // TODO: Should InventoryManager be a Singleton?
         // inventoryManager = FindObjectOfType<InventoryManager>();
 
-        TestOnly_SetUp();
+        // TestOnly_SetUp();
         UpdateDisplay();
     }
 
