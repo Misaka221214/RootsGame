@@ -11,7 +11,7 @@ public class Teleport : MonoBehaviour
     private GridLayout gridLayout;
 
     public GameObject target;
-
+    public TileManagement tileManagement;
     private Teleport otherTeleport;
 
     public float CD_in_ms = 1000;
@@ -24,6 +24,8 @@ public class Teleport : MonoBehaviour
         {
             GlobalTileMap = GameObject.FindGameObjectWithTag("TileMap");
         }
+
+        tileManagement = GameObject.FindObjectOfType<TileManagement>();
         tilemap = GlobalTileMap.GetComponent<Tilemap>();
         gridLayout = GlobalTileMap.GetComponentInParent<GridLayout>();
         otherTeleport = target.GetComponent<Teleport>();
@@ -34,7 +36,7 @@ public class Teleport : MonoBehaviour
     {
         if(isActive) return;
         Vector3Int currLocation = gridLayout.WorldToCell(gameObject.transform.position);
-        if (tilemap.GetTile<Tile>(currLocation) == null)
+        if (!tileManagement.isCovered(currLocation))
         {
             isActive = true;
         }
