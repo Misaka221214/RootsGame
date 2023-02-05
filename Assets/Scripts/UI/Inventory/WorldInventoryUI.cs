@@ -76,13 +76,13 @@ public class WorldInventoryUI : MonoBehaviour
         {
             GameObject go = Instantiate(CreatureData.PlayerCreaturePrefabs[creature],
                 defaultSpawnPosition, Quaternion.identity);
+            inventoryManager.RemoveCreature(creature);
         }
         else
         {
             Debug.LogError("Cannot find creature prefab");
         }
 
-        inventoryManager.RemoveCreature(creature);
         UpdateDisplay();
     }
 }
