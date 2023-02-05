@@ -39,6 +39,10 @@ public class DoritosRabbit : Creature {
     }
 
     public override void Die() {
+        if (gameObject.CompareTag("Enemy")) {
+            inventoryManager = GameObject.Find("InventoryManager");
+            inventoryManager.GetComponent<InventoryManager>().AddInventory(creatureType);
+        }
         for (int i = 0; i < 10; i++) {
             GameObject chip = Instantiate(doritosChip, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
             chip.tag = tag;

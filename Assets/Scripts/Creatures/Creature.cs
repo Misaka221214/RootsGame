@@ -7,6 +7,7 @@ public abstract class Creature : MonoBehaviour {
     public Rigidbody2D rb;
     public bool isAlly;
     public CreatureType creatureType;
+    public GameObject inventoryManager;
 
     private float stuckSaverDeltaTimer = CreatureConstants.STUCK_COOLDOWN;
     private float searchEnemyDeltaTimer = 3f;
@@ -40,6 +41,10 @@ public abstract class Creature : MonoBehaviour {
     }
 
     public virtual void Die() {
+        if(gameObject.CompareTag("Enemy")) {
+            inventoryManager = GameObject.Find("InventoryManager");
+            inventoryManager.GetComponent<InventoryManager>().AddInventory(creatureType);
+        }
         Destroy(transform.gameObject);
     }
 

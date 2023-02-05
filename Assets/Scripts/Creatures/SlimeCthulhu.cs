@@ -50,6 +50,10 @@ public class SlimeCthulhu : Creature {
     }
 
     public override void Die() {
+        if (gameObject.CompareTag("Enemy")) {
+            inventoryManager = GameObject.Find("InventoryManager");
+            inventoryManager.GetComponent<InventoryManager>().AddInventory(creatureType);
+        }
         rb.AddForce(new Vector2(CreatureConstants.VELOCITY_LOW * xDirection, 0), ForceMode2D.Impulse);
         Invoke(nameof(ExplodeAndDie), 2f);
     }
