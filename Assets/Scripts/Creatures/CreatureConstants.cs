@@ -82,13 +82,35 @@ public static class CreatureData
         },{
             CreatureType.NEYMAR, Resources.Load<Sprite>("CreatureSprites/Neymar Idle")
         },{
-            CreatureType.CTHULHU, Resources.Load<Sprite>("CreatureSprites/slime")
+            CreatureType.CTHULHU, Resources.Load<Sprite>("CreatureSprites/煮熟的克苏鲁")
         },{
-            CreatureType.DORITOS, Resources.Load<Sprite>("CreatureSprites/slime")
+            CreatureType.DORITOS, Resources.Load<Sprite>("CreatureSprites/doritos")
         },{
-            CreatureType.DORITOS_RABBIT, Resources.Load<Sprite>("CreatureSprites/slime")
+            CreatureType.DORITOS_RABBIT, Resources.Load<Sprite>("CreatureSprites/多力多滋披风")
         },{
             CreatureType.SLIME_NEYMAR, Resources.Load<Sprite>("CreatureSprites/骷髅史莱姆（史莱姆包着一具骷髅）")
+        },{
+            CreatureType.SLIME_CTHULHU, Resources.Load<Sprite>("CreatureSprites/slime")
+        },{
+            CreatureType.NYAR, Resources.Load<Sprite>("CreatureSprites/slime")
+        },
+        {
+           CreatureType.GREEN_DORITOS, Resources.Load<Sprite>("CreatureSprites/slime")
+        },
+        {
+           CreatureType.DORITOS_OCTOPUS, Resources.Load<Sprite>("CreatureSprites/slime")
+        },
+        {
+           CreatureType.GREEN_NYAR, Resources.Load<Sprite>("CreatureSprites/slime")
+        },
+        {
+           CreatureType.GREEN_RABBIT_OCTOPUS, Resources.Load<Sprite>("CreatureSprites/slime")
+        },
+        {
+           CreatureType.GREEN_DORITOS_RABBIT, Resources.Load<Sprite>("CreatureSprites/slime")
+        },
+        {
+           CreatureType.TRASH, Resources.Load<Sprite>("CreatureSprites/slime")
         }
     };
     
@@ -123,9 +145,9 @@ public static class CreatureData
             CreatureType.DORITOS, Resources.Load("Prefabs/Creatures/Doritos") as GameObject
         },{
             CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/DoritosRabbit") as GameObject
-        }//{
-            // CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
-        //}
+        },{
+            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy") as GameObject
+        },
     };
 
 }
