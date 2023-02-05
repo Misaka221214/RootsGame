@@ -146,8 +146,27 @@ public static class CreatureData
         },{
             CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/DoritosRabbit") as GameObject
         },{
-            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy") as GameObject
+            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeNeymar") as GameObject
+        },{
+            CreatureType.SLIME_CTHULHU, Resources.Load("Prefabs/Creatures/SlimeCthulhu") as GameObject
+        },{
+            CreatureType.NYAR, Resources.Load("Prefabs/Creatures/Nyar") as GameObject
+        },{
+            CreatureType.GREEN_DORITOS, Resources.Load("Prefabs/Creatures/GreenDoritos") as GameObject
+        },{
+            CreatureType.DORITOS_OCTOPUS, Resources.Load("Prefabs/Creatures/DoritosOctopus") as GameObject
+        },{
+            CreatureType.GREEN_NYAR, Resources.Load("Prefabs/Creatures/GreenNyar") as GameObject
+        },{
+            CreatureType.GREEN_RABBIT_OCTOPUS, Resources.Load("Prefabs/Creatures/GreenRabbitOctopus") as GameObject
         },
+        {
+            CreatureType.GREEN_DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/GreenDoritosRabbit") as GameObject
+        },
+        {
+            CreatureType.TRASH, Resources.Load("Prefabs/Creatures/Trash") as GameObject
+        }
+
     };
 
 }
