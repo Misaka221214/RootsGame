@@ -41,6 +41,13 @@ public class WorldInventoryUI : MonoBehaviour
         inventoryManager.AddInventory(CreatureType.NEYMAR);
         inventoryManager.AddInventory(CreatureType.NEYMAR);
         inventoryManager.AddInventory(CreatureType.NEYMAR);
+        inventoryManager.AddInventory(CreatureType.NEYMAR);
+        inventoryManager.AddInventory(CreatureType.NEYMAR);
+        inventoryManager.AddInventory(CreatureType.NEYMAR);
+        inventoryManager.AddInventory(CreatureType.NEYMAR);
+        inventoryManager.AddInventory(CreatureType.NEYMAR);
+        inventoryManager.AddInventory(CreatureType.NEYMAR);
+        inventoryManager.AddInventory(CreatureType.NEYMAR);
         inventoryManager.AddInventory(CreatureType.SLIME);
         inventoryManager.AddInventory(CreatureType.SLIME);
         inventoryManager.AddInventory(CreatureType.RABBIT);
