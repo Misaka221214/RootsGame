@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4858846897614924505}
   - component: {fileID: 4858846897614924516}
   - component: {fileID: 6240742075151449182}
+  - component: {fileID: 4189805846856335119}
   m_Layer: 0
   m_Name: SlimeEnemy
   m_TagString: Enemy
@@ -146,6 +147,18 @@ MonoBehaviour:
   velocity: 5
   ammo: 5
   xDirection: 1
+--- !u!114 &4189805846856335119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858846897614924504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2d73afc0de442b381f9a9f3d8cd568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9033061663341149672
 GameObject:
   m_ObjectHideFlags: 0
