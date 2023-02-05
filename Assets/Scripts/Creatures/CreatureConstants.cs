@@ -70,22 +70,22 @@ public static class CreatureData
         CreatureType.SLIME_NEYMAR, "Slime Neymar"
     }
     };
-    
+
     public static Dictionary<CreatureType, Sprite> CreatureSprite = new Dictionary<CreatureType, Sprite>(){
         {
-            CreatureType.SLIME, Resources.Load("CreatureSprites/slime") as Sprite
+            CreatureType.SLIME, Resources.Load<Sprite>("CreatureSprites/slime")
         },{
-            CreatureType.RABBIT, Resources.Load("CreatureSprites/兔子") as Sprite
+            CreatureType.RABBIT, Resources.Load<Sprite>("CreatureSprites/兔子")
         },{
-            CreatureType.NEYMAR, Resources.Load("CreatureSprites/Neymar Idle") as Sprite
+            CreatureType.NEYMAR, Resources.Load<Sprite>("CreatureSprites/Neymar Idle")
         },{
-            CreatureType.CTHULHU, Resources.Load("CreatureSprites/slime") as Sprite
+            CreatureType.CTHULHU, Resources.Load<Sprite>("CreatureSprites/slime")
         },{
-            CreatureType.DORITOS, Resources.Load("CreatureSprites/slime") as Sprite
+            CreatureType.DORITOS, Resources.Load<Sprite>("CreatureSprites/slime")
         },{
-            CreatureType.DORITOS_RABBIT, Resources.Load("CreatureSprites/slime") as Sprite
+            CreatureType.DORITOS_RABBIT, Resources.Load<Sprite>("CreatureSprites/slime")
         },{
-            CreatureType.SLIME_NEYMAR, Resources.Load("CreatureSprites/slime") as Sprite
+            CreatureType.SLIME_NEYMAR, Resources.Load<Sprite>("CreatureSprites/slime")
         }
     };
     
