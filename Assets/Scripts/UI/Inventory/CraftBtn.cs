@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class RemoveInputBtn : MonoBehaviour, IPointerClickHandler
+public class CraftBtn : MonoBehaviour, IPointerClickHandler
 {
-    public InputSlot inputSlot;
+    public CraftSystem craftSystem;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        inputSlot.RemoveFromInput();
+        craftSystem.OnCraft();
     }
 
+    // Start is called before the first frame update
     void Start()
     {
         
