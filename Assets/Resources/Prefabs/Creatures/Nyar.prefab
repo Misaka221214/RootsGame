@@ -141,6 +141,9 @@ GameObject:
   - component: {fileID: 8011729136490981758}
   - component: {fileID: 8011729136490981749}
   - component: {fileID: 8544916306637040929}
+  - component: {fileID: 2816160705020578301}
+  - component: {fileID: 363714321291954234}
+  - component: {fileID: -2486018119065555771}
   m_Layer: 0
   m_Name: Nyar
   m_TagString: Ally
@@ -315,3 +318,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2816160705020578301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011729136490981753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2d73afc0de442b381f9a9f3d8cd568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &363714321291954234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011729136490981753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdeb52b8f40e24d5eb35246499ee02aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2486018119065555771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011729136490981753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9802823007248ffbb610be0e10f807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

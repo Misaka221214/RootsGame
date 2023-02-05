@@ -139,6 +139,9 @@ GameObject:
   - component: {fileID: 2300890740664261887}
   - component: {fileID: 2300890740664261884}
   - component: {fileID: 2300890740664261886}
+  - component: {fileID: 5752562251704006700}
+  - component: {fileID: -7247162907137621406}
+  - component: {fileID: 4279447977031136578}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Ally
@@ -272,3 +275,39 @@ MonoBehaviour:
   velocity: 3
   ammo: 5
   xDirection: 1
+--- !u!114 &5752562251704006700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2300890740664261875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2d73afc0de442b381f9a9f3d8cd568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7247162907137621406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2300890740664261875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdeb52b8f40e24d5eb35246499ee02aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4279447977031136578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2300890740664261875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9802823007248ffbb610be0e10f807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

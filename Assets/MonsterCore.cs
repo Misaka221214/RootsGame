@@ -46,8 +46,9 @@ public class MonsterCore : MonoBehaviour
         {
             if (_gameLoop.state == GameLoopState.Underground)
             {
-                Instantiate(CreatureData.CreatureEnemyObject[type], gameObject.transform.position,
+                GameObject go = Instantiate(CreatureData.PlayerCreaturePrefabs[type], gameObject.transform.position,
                     gameObject.transform.rotation);
+                go.tag = "Enemy";
             }
             yield return new WaitForSeconds(Interval);
         }

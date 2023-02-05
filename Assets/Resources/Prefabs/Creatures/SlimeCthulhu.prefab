@@ -139,6 +139,9 @@ GameObject:
   - component: {fileID: 8300156965185632352}
   - component: {fileID: 8300156965185632353}
   - component: {fileID: 8300156965185632377}
+  - component: {fileID: 4436472620934252951}
+  - component: {fileID: -8919585559346101199}
+  - component: {fileID: 3417774938311995275}
   m_Layer: 0
   m_Name: SlimeCthulhu
   m_TagString: Ally
@@ -272,3 +275,39 @@ MonoBehaviour:
   velocity: 3
   ammo: 5
   xDirection: 1
+--- !u!114 &4436472620934252951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300156965185632357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2d73afc0de442b381f9a9f3d8cd568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8919585559346101199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300156965185632357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdeb52b8f40e24d5eb35246499ee02aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3417774938311995275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300156965185632357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9802823007248ffbb610be0e10f807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -129,6 +129,9 @@ GameObject:
   - component: {fileID: 6262557438053224565}
   - component: {fileID: 6262557438053224564}
   - component: {fileID: 6262557438053224560}
+  - component: {fileID: -5228435870982503394}
+  - component: {fileID: -1430631082912982018}
+  - component: {fileID: -7420864366978588087}
   m_Layer: 0
   m_Name: Neymar
   m_TagString: Ally
@@ -262,3 +265,39 @@ MonoBehaviour:
   velocity: 3
   ammo: 5
   xDirection: 1
+--- !u!114 &-5228435870982503394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6262557438053225355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2d73afc0de442b381f9a9f3d8cd568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1430631082912982018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6262557438053225355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdeb52b8f40e24d5eb35246499ee02aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7420864366978588087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6262557438053225355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9802823007248ffbb610be0e10f807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

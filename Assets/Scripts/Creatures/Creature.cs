@@ -22,14 +22,20 @@ public abstract class Creature : MonoBehaviour {
     private void Start() {
         isAlly = GetComponent<Creature>().CompareTag("Ally");
         rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true;
+        if (rb)
+        {
+            rb.freezeRotation = true;
+        }
     }
 
     protected void StuckSaver() {
         stuckSaverDeltaTimer -= Time.deltaTime;
         if (stuckSaverDeltaTimer < 0f && Mathf.Abs(rb.velocity.x) < CreatureConstants.STUCK_VELOCITY_THRESHOLD) {
             stuckSaverDeltaTimer = CreatureConstants.STUCK_COOLDOWN;
-            rb.AddForce(new Vector2(0, CreatureConstants.STUCK_JUMP * 5));
+            if (!rb)
+            {
+                rb.AddForce(new Vector2(0, CreatureConstants.STUCK_JUMP * 5));
+            }
         }
     }
 
