@@ -40,7 +40,8 @@ public enum CreatureType {
     CTHULHU,
     DORITOS,
     DORITOS_RABBIT,
-    SLIME_NEYMAR
+    SLIME_NEYMAR,
+    Null
 }
 
 public static class CreatureData
@@ -77,7 +78,7 @@ public static class CreatureData
         },{
             CreatureType.DORITOS_RABBIT, Resources.Load<Sprite>("CreatureSprites/slime")
         },{
-            CreatureType.SLIME_NEYMAR, Resources.Load<Sprite>("CreatureSprites/slime")
+            CreatureType.SLIME_NEYMAR, Resources.Load<Sprite>("CreatureSprites/骷髅史莱姆（史莱姆包着一具骷髅）")
         }
     };
     

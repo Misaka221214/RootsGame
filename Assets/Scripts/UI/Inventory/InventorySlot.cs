@@ -13,11 +13,15 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     public TextMeshProUGUI debugNameTxt;
 
     private CraftSystem craftSystem;
+    private InventoryManager inventoryManager;
+    private InventoryUI InventoryUI;
     private CreatureType creatureType;
 
     private void Awake()
     {
         craftSystem = FindObjectOfType<CraftSystem>();
+        inventoryManager = FindObjectOfType<InventoryManager>();
+        InventoryUI = FindObjectOfType<InventoryUI>();
     }
 
     void Start()
@@ -38,6 +42,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
             Sprite creatureSprite = CreatureData.CreatureSprite[creature];
             itemImg.sprite = creatureSprite;
             debugNameTxt.text = creature.ToString();
+            creatureType = creature;
         } else
         {
             Debug.LogError("Cannot find creature sprite");
@@ -55,17 +60,16 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     public void AddToInput()
     {
-        
-    }
-
-    public void RemoveFromInput()
-    {
-
+        if (craftSystem.AddInput(creatureType))
+        {
+            inventoryManager.RemoveCreature(creatureType);
+            InventoryUI.UpdateDisplay();
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // TODO: Can you craft with 2 of the same creature?
+        AddToInput();
 
     }
 }
