@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,9 +82,22 @@ public class WorldInventoryUI : MonoBehaviour
 
         if (CreatureData.PlayerCreaturePrefabs.ContainsKey(creature))
         {
-            GameObject main = GameObject.FindGameObjectWithTag("MainCamera");
+            Vector3 camPosition = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
+            Spawn[] spawns = GameObject.FindObjectsOfType<Spawn>();
+            float closet = Single.PositiveInfinity;
+            Spawn closetSpawn = null;
+            foreach (var spawn in spawns)
+            {
+                float dist = (camPosition - spawn.transform.position).magnitude;
+                if (dist < closet && spawn.isActive)
+                {
+                    closet = dist;
+                    closetSpawn = spawn;
+                }
+            }
+            if(!closetSpawn) return;
             GameObject go = Instantiate(CreatureData.PlayerCreaturePrefabs[creature],
-                defaultSpawnPosition, Quaternion.identity);
+                closetSpawn.transform.position, Quaternion.identity);
             inventoryManager.RemoveCreature(creature);
         }
         else

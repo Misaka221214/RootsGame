@@ -64,6 +64,25 @@ public class TileManagement : MonoBehaviour {
         }
     }
 
+    public bool isCovered(Vector3Int currLocation)
+    {
+        if(tilemap.GetTile<Tile>(currLocation))
+        {
+            return true;
+        }
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("TilemapHelper");
+        foreach (var obj in objects)
+        {
+            bool contains = obj.GetComponent<BoxCollider2D>().bounds.Contains(grid.CellToWorld(currLocation) / 10f);
+            if (contains)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void ForceRemoveTile(Vector3Int pos) {
         if (tilemap) {
             TileBase tb = tilemap.GetTile<Tile>(pos);
