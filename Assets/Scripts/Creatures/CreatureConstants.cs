@@ -65,19 +65,19 @@ public static class CreatureData
     
     public static Dictionary<CreatureType, Sprite> CreatureSprite = new Dictionary<CreatureType, Sprite>(){
         {
-            CreatureType.SLIME, Resources.Load("CreatureSprites/slime.png") as Sprite
+            CreatureType.SLIME, Resources.Load("CreatureSprites/slime") as Sprite
         },{
-            CreatureType.RABBIT, Resources.Load("CreatureSprites/兔子.png") as Sprite
+            CreatureType.RABBIT, Resources.Load("CreatureSprites/兔子") as Sprite
         },{
-            CreatureType.NEYMAR, Resources.Load("CreatureSprites/Neymar Idle.png") as Sprite
+            CreatureType.NEYMAR, Resources.Load("CreatureSprites/Neymar Idle") as Sprite
         },{
-            CreatureType.CTHULHU, Resources.Load("CreatureSprites/slime.png") as Sprite
+            CreatureType.CTHULHU, Resources.Load("CreatureSprites/slime") as Sprite
         },{
-            CreatureType.DORITOS, Resources.Load("CreatureSprites/slime.png") as Sprite
+            CreatureType.DORITOS, Resources.Load("CreatureSprites/slime") as Sprite
         },{
-            CreatureType.DORITOS_RABBIT, Resources.Load("CreatureSprites/slime.png") as Sprite
+            CreatureType.DORITOS_RABBIT, Resources.Load("CreatureSprites/slime") as Sprite
         },{
-            CreatureType.SLIME_NEYMAR, Resources.Load("CreatureSprites/slime.png") as Sprite
+            CreatureType.SLIME_NEYMAR, Resources.Load("CreatureSprites/slime") as Sprite
         }
     };
     
@@ -85,17 +85,17 @@ public static class CreatureData
         {
             CreatureType.SLIME, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.RABBIT, Resources.Load("Prefabs/Creatures/SlimeEnemy.prefab")
+            CreatureType.RABBIT, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy.prefab")
+            CreatureType.NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.CTHULHU, Resources.Load("Prefabs/Creatures/SlimeEnemy.prefab")
+            CreatureType.CTHULHU, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.DORITOS, Resources.Load("Prefabs/Creatures/SlimeEnemy.prefab")
+            CreatureType.DORITOS, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/SlimeEnemy.prefab")
+            CreatureType.DORITOS_RABBIT, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         },{
-            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy.prefab")
+            CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeEnemy")
         }
     };
     
