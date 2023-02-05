@@ -19,8 +19,8 @@ public struct InventoryItem
 }
 public class InventoryManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public List<InventoryItem> allitems = new List<InventoryItem>();
+    public Dictionary<CreatureType, int> creatureToQuantity = new();
     void Start()
     {
         
@@ -34,7 +34,17 @@ public class InventoryManager : MonoBehaviour
 
     public void AddInventory(CreatureType type)
     {
-        allitems.Add(new InventoryItem(type));
+        var newItem = new InventoryItem(type);
+
+        allitems.Add(newItem);
         Debug.Log(allitems.Count);
+
+        if (creatureToQuantity.ContainsKey(type))
+        {
+            creatureToQuantity[type]++;
+        } else
+        {
+            creatureToQuantity.Add(type, 1);
+        }
     }
 }
