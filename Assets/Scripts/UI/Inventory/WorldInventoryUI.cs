@@ -69,8 +69,18 @@ public class WorldInventoryUI : MonoBehaviour
 
     public void SpawnCreature(CreatureType creature)
     {
-        // TODO: Implement
-        Debug.Log("TODO: Spawn Creature at default world position");
+        // TODO: May need to update spawn location
+        Debug.Log("Spawn Creature at default world position");
+
+        if (CreatureData.PlayerCreaturePrefabs.ContainsKey(creature))
+        {
+            GameObject go = Instantiate(CreatureData.PlayerCreaturePrefabs[creature],
+                defaultSpawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogError("Cannot find creature prefab");
+        }
 
         inventoryManager.RemoveCreature(creature);
         UpdateDisplay();
