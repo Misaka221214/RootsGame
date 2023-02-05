@@ -31,10 +31,32 @@ public class CraftSystem : MonoBehaviour
     }
 
     private void InitRecipes() {
-        // TODO: Add all recipes
-
         recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
             new List<CreatureType>() { CreatureType.NEYMAR, CreatureType.SLIME }, CreatureType.SLIME_NEYMAR));
+
+        recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
+            new List<CreatureType>() { CreatureType.RABBIT, CreatureType.DORITOS }, CreatureType.DORITOS_RABBIT));
+
+        recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
+            new List<CreatureType>() { CreatureType.CTHULHU, CreatureType.SLIME }, CreatureType.SLIME_CTHULHU));
+
+        recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
+            new List<CreatureType>() { CreatureType.NEYMAR, CreatureType.CTHULHU }, CreatureType.NYAR));
+
+        recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
+            new List<CreatureType>() { CreatureType.DORITOS, CreatureType.SLIME }, CreatureType.GREEN_DORITOS));
+
+        recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
+            new List<CreatureType>() { CreatureType.DORITOS, CreatureType.CTHULHU }, CreatureType.DORITOS_OCTOPUS));
+
+        recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
+            new List<CreatureType>() { CreatureType.SLIME_CTHULHU, CreatureType.NYAR }, CreatureType.GREEN_NYAR));
+
+        recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
+            new List<CreatureType>() { CreatureType.DORITOS_RABBIT, CreatureType.DORITOS_OCTOPUS }, CreatureType.GREEN_RABBIT_OCTOPUS));
+
+        recipes.Add(new KeyValuePair<List<CreatureType>, CreatureType>(
+            new List<CreatureType>() { CreatureType.DORITOS_RABBIT, CreatureType.GREEN_DORITOS }, CreatureType.GREEN_DORITOS_RABBIT));
     }
 
     public void OnCraft()
