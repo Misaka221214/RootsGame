@@ -64,17 +64,11 @@ public class CraftSystem : MonoBehaviour
         if (inputList.Count == 2)
         {
             var output = GetRecipeOutput();
-            if (output == CreatureType.TRASH)
-            {
-                // TODO
-            } else
-            {
-                outputSlot.ShowOutput(output);
-                inventoryManager.AddInventory(output);
-                inventoryUI.UpdateDisplay();
-                inputList.Clear();
-                UpdateInputDisplay();
-            }
+            outputSlot.ShowOutput(output);
+            inventoryManager.AddInventory(output);
+            inventoryUI.UpdateDisplay();
+            inputList.Clear();
+            UpdateInputDisplay();
         }
     }
 
