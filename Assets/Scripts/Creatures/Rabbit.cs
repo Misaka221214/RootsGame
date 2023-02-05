@@ -12,7 +12,7 @@ public class Rabbit : Creature {
     private float jumpDeltaTime = CreatureConstants.RABBIT_JUMP_COOLDOWN;
 
     public void Awake() {
-        creatureType = CreatureType.SLIME;
+        creatureType = CreatureType.RABBIT;
     }
 
     public void FixedUpdate() {
