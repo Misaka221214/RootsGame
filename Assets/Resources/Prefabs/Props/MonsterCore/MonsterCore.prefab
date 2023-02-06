@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eddca1306ffb4b8aa3631933492deb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   Interval: 5
   isActive: 0
   tileManagement: {fileID: 0}
