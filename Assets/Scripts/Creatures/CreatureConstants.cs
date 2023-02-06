@@ -148,7 +148,7 @@ public static class CreatureData
         },{
             CreatureType.SLIME_NEYMAR, Resources.Load("Prefabs/Creatures/SlimeNeymar") as GameObject
         },{
-            CreatureType.SLIME_CTHULHU, Resources.Load("Prefabs/Creatures/SlimeCthulhu") as GameObject
+            CreatureType.SLIME_CTHULHU, Resources.Load("Prefabs/Creatures 1/SlimeCthulhu") as GameObject
         },{
             CreatureType.NYAR, Resources.Load("Prefabs/Creatures/Nyar") as GameObject
         },{

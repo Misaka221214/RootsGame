@@ -32,6 +32,16 @@ public class InventoryManager : MonoBehaviour
         // TODO: Remove TestOnly Stuff
         TestOnly_Init();
         AddInventory(CreatureType.NEYMAR);
+        AddInventory(CreatureType.NEYMAR);
+
+        AddInventory(CreatureType.NEYMAR);
+
+        AddInventory(CreatureType.NEYMAR);
+
+        AddInventory(CreatureType.NEYMAR);
+        AddInventory(CreatureType.NEYMAR);
+
+
     }
 
     // Update is called once per frame
